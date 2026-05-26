@@ -1,5 +1,5 @@
 FROM prefecthq/prefect:3.4.25-python3.12-kubernetes
-# see available versions at 
+# see available versions at
 # https://hub.docker.com/r/prefecthq/prefect/
 
 LABEL maintainer="Erik Osinga <erik.osinga@utoronto.ca>"
@@ -32,9 +32,9 @@ RUN apt-get update --yes --quiet --fix-missing \
         default-jre \
     && apt-get clean --yes \
     && apt-get autoremove --purge --quiet --yes \
-    && rm -rf /var/lib/apt/lists/* /var/tmp/* 
+    && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
-# install rclone 
+# install rclone
 RUN sudo -v ; curl https://rclone.org/install.sh | sudo bash
 
 ADD nsswitch.conf /etc/
@@ -49,7 +49,7 @@ RUN pip install numpy \
     prefect \
     pyregion \
     tqdm
-    
+
 # Install other python packages with pip
 RUN pip install RM-Tools \
     RMTable \
@@ -126,5 +126,5 @@ RUN pip install git+https://github.com/${OPENCADC_REPO}/caom2pipe@${OPENCADC_BRA
 # 2026-05-26: rebuild to pick up healpy-based possum2caom2 (fixes 0923 vs 0922 tile coordinate names)
 RUN pip install git+https://github.com/${OPENCADC_REPO}/possum2caom2@${OPENCADC_BRANCH}#egg=possum2caom2
 
-# dont get jupyter in the headless version 
+# dont get jupyter in the headless version
 ### RUN pip install jupyterlab

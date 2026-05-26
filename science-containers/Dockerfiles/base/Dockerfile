@@ -23,7 +23,7 @@ RUN apt-get update --yes --quiet --fix-missing \
         tcsh \
     && apt-get clean --yes \
     && apt-get autoremove --purge --quiet --yes \
-    && rm -rf /var/lib/apt/lists/* /var/tmp/* 
+    && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
 ADD nsswitch.conf /etc/
 
