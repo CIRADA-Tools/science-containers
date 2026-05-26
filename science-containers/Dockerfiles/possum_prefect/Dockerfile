@@ -123,6 +123,7 @@ RUN git clone https://github.com/${OPENCADC_REPO}/caom2tools.git && \
     cd ..
 
 RUN pip install git+https://github.com/${OPENCADC_REPO}/caom2pipe@${OPENCADC_BRANCH}#egg=caom2pipe
+# 2026-05-26: rebuild to pick up healpy-based possum2caom2 (fixes 0923 vs 0922 tile coordinate names)
 RUN pip install git+https://github.com/${OPENCADC_REPO}/possum2caom2@${OPENCADC_BRANCH}#egg=possum2caom2
 
 # dont get jupyter in the headless version 
