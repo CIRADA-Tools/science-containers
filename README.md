@@ -2,7 +2,7 @@
 
 This repository hosts Docker container configurations for the VLASS* and POSSUM pipelines, optimized for deployment on the CANFAR Science Platform but more broadly employable as well. These containers are designed to facilitate scientific computing tasks in a reproducible and scalable manner. The repository is based on the original repository found [here](https://github.com/opencadc/science-containers/).
 
-For POSSUM there are currently two Dockerfiles, which have identical software, except that the 'notebook' version installs jupyterlab, while the 'headless' version does not. 
+For POSSUM there are currently two Dockerfiles, which have identical software, except that the 'notebook' version installs jupyterlab, while the 'headless' version does not.
 
 
 ## Usage
@@ -58,12 +58,10 @@ Version 1.14 and up have a downgraded version of astroquery to allow headless lo
 
 Version 1.13 and above will contain singularity/apptainer and screen
 
-Version 1.7.5 Contains possum2caom2 as of 2024-08-20, which has the ingest set-up for the 3D pipeline. 
+Version 1.7.5 Contains possum2caom2 as of 2024-08-20, which has the ingest set-up for the 3D pipeline.
 
-Version 1.7 now contains fitsverify, part of libcfitsio-bin. Version 1.7.4 should contain a new version of possum2caom2 (caom2 to version 2.6.2 and caom2utils to version 1.7.3,  0.1.6 of possum2caom2) which (hopefully) fixes ingesting 3D FDFs and RMSF into CADC. 
+Version 1.7 now contains fitsverify, part of libcfitsio-bin. Version 1.7.4 should contain a new version of possum2caom2 (caom2 to version 2.6.2 and caom2utils to version 1.7.3,  0.1.6 of possum2caom2) which (hopefully) fixes ingesting 3D FDFs and RMSF into CADC.
 
-Version 1.6 (2024-07-16) now contains java (jre) and cadctap pyvo and vos as well. Note that pyfftw does not work with py3.12 as of 2024-07-23 but there is a separate container available on CANFAR which runs py3.11. Additionally there is also a container available that contains a 2022 version of WSclean (both not maintained on this GitHub page though). 
+Version 1.6 (2024-07-16) now contains java (jre) and cadctap pyvo and vos as well. Note that pyfftw does not work with py3.12 as of 2024-07-23 but there is a separate container available on CANFAR which runs py3.11. Additionally there is also a container available that contains a 2022 version of WSclean (both not maintained on this GitHub page though).
 
 Version 1.0 (2024-05-16) is now here! The POSSUM polarimetry processing is now in full-swing and working (so far), so it is time for version 1.0.
-
-

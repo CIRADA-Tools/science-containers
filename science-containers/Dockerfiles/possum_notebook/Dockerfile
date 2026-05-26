@@ -1,5 +1,5 @@
 FROM prefecthq/prefect:3.4.25-python3.12-kubernetes
-# see available versions at 
+# see available versions at
 # https://hub.docker.com/r/prefecthq/prefect/
 
 
@@ -36,9 +36,9 @@ RUN apt-get update --yes --quiet --fix-missing \
         screen \
     && apt-get clean --yes \
     && apt-get autoremove --purge --quiet --yes \
-    && rm -rf /var/lib/apt/lists/* /var/tmp/* 
+    && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
-# install rclone 
+# install rclone
 RUN sudo -v ; curl https://rclone.org/install.sh | sudo bash
 
 ADD nsswitch.conf /etc/
@@ -97,7 +97,7 @@ RUN pip install numpy \
     prefect \
     pyregion \
     tqdm
-    
+
 # Install other python packages with pip
 RUN pip install RM-Tools \
     RMTable \
@@ -176,5 +176,5 @@ RUN git clone https://github.com/${OPENCADC_REPO}/caom2tools.git && \
 RUN pip install git+https://github.com/${OPENCADC_REPO}/caom2pipe@${OPENCADC_BRANCH}#egg=caom2pipe
 RUN pip install git+https://github.com/${OPENCADC_REPO}/possum2caom2@${OPENCADC_BRANCH}#egg=possum2caom2
 
-# Get jupyter in the headless version 
+# Get jupyter in the headless version
 RUN pip install jupyterlab
